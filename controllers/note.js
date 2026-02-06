@@ -15,16 +15,17 @@ const getNote = async (req, res) => {
 
 const getNotes = async (req, res) => {
   let { page = 1 } = req.query;
+  const createdBy = req.user.userId;
   page = Number(page);
   const limit = 20;
   const skip = (page - 1) * limit;
-  const notes = await Note.find().skip(skip).limit(limit);
+  const notes = await Note.find({ createdBy }).skip(skip).limit(limit);
   sendSuccess(res, notes);
 };
 
 const createNote = async (req, res) => {
   const { title, body } = req.body;
-  const createdBy  = req.user.userId;
+  const createdBy = req.user.userId;
   const note = await Note.create({ title, body, createdBy });
   sendSuccess(res, note, StatusCodes.CREATED);
 };
@@ -38,7 +39,7 @@ const editNote = async (req, res) => {
     {
       new: true,
       runValidators: true,
-    }
+    },
   );
   if (!updatedNote) {
     throw new NotFound("No Note Found By This Id");
@@ -60,5 +61,5 @@ module.exports = {
   getNotes,
   createNote,
   editNote,
-  delNote
+  delNote,
 };
