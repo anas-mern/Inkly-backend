@@ -18,8 +18,8 @@ app.use(limitter({
   max : 100
 }))
 //Routes
-const { JobRouter, AuthRouter } = require("./routes");
-app.use("/api/v1/jobs", JobRouter);
+const { NoteRouter, AuthRouter } = require("./routes");
+app.use("/api/v1/notes", NoteRouter);
 app.use("/api/v1/auth", AuthRouter);
 
 //Error Handling

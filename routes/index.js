@@ -1,8 +1,8 @@
 const AuthRouter = require("./auth");
-const JobRouter = require("./job");
+const NoteRouter = require("./note");
 
 
 module.exports = {
     AuthRouter,
-    JobRouter
+    NoteRouter
 }

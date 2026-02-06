@@ -1,6 +1,6 @@
-# 🔐 Jobs API (with Authentication)
+# 🔐 Notes API (with Authentication)
 
-This is the **backend** for the Task Manager project. It includes a full **REST API** built with **Node.js**, **Express**, **MongoDB**, and features **JWT-based authentication**. Users can register, login, and manage the job opportunities securely.
+This is the **backend** for the Notes website project (Inkly). It includes a full **REST API** built with **Node.js**, **Express**, **MongoDB**, and features **JWT-based authentication**. Users can register, login, and manage the job opportunities securely.
 
 ---
 
@@ -70,17 +70,27 @@ Server runs on `http://localhost:5000`
 
 ---
 
-## ✅ Task Endpoints (Protected)
+
+---
+
+## 👤 Author
+
+- [Anas Mostafa](https://github.com/anas-mern)
+
+---
+
+
+## ✅ Notes Endpoints (Protected)
 
 All routes below require a **valid JWT token** in the `Authorization` header as `Bearer <token>`.
 
-| Method | Endpoint      | Description       |
-| ------ | ------------- | ----------------- |
-| GET    | /api/jobs     | Get user jobs     |
-| POST   | /api/jobs     | Create new task   |
-| GET    | /api/jobs/:id | Get task by ID    |
-| PUT    | /api/jobs/:id | Update task by ID |
-| DELETE | /api/jobs/:id | Delete task by ID |
+| Method | Endpoint       | Description       |
+| ------ | -------------  | ----------------- |
+| GET    | /api/notes     | Get user jobs     |
+| POST   | /api/notes     | Create new task   |
+| GET    | /api/notes/:id | Get task by ID    |
+| PUT    | /api/notes/:id | Update task by ID |
+| DELETE | /api/notes/:id | Delete task by ID |
 
 ---
 
@@ -88,9 +98,8 @@ All routes below require a **valid JWT token** in the `Authorization` header as 
 
 ```json
 {
-  "company": "IBM",
-  "position": "MERN Stack",
-  "status": "interview",
+  "title": "Domino Scores",
+  "position": "Anas: 25 -- S3o0dy: 33 -- Yossef: 36",
   "createdBy": "objectID()"
 }
 ```

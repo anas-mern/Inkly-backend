@@ -1,17 +1,13 @@
 const mongoose = require("mongoose");
 
-const JobSchema = mongoose.Schema({
-    company:{
+const NoteSchema = mongoose.Schema({
+    title:{
         type:String,
         required:[true,"Please Provide The Company"]
     },
-    position:{
+    body:{
         type:String,
         required:[true,"Please Provide The Company"]
-    },
-    status:{
-        type:String,
-        required:false,
     },
     createdBy:{
         type: mongoose.Types.ObjectId,
@@ -20,6 +16,6 @@ const JobSchema = mongoose.Schema({
     }
 }, { timestaps: true });
 
-const Job = mongoose.model('job',JobSchema)
+const Note = mongoose.model('note',NoteSchema)
 
-module.exports = Job
+module.exports = Note
