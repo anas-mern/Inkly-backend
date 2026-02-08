@@ -14,7 +14,7 @@ const NoteSchema = mongoose.Schema({
         ref:'user',
         required:[true,"Please Provide The User's Id"]
     }
-}, { timestaps: true });
+}, { timestamps: true });
 
 const Note = mongoose.model('note',NoteSchema)
 
